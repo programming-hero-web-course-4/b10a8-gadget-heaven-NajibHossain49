@@ -2,7 +2,7 @@
     {
         "product_id": 1,
         "product_title": "Smartphone X1",
-        "product_image": "images/smartphone_x1.jpg",
+        "product_image": "https://5.imimg.com/data5/KV/ZH/LM/GLADMIN-50267556/eluga-x1-pro-mobiles-500x500-500x500-1000x1000.jpg",
         "category": "Smartphones",
         "price": 699.99,
         "description": "Latest smartphone with high-end features.",

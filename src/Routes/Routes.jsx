@@ -3,8 +3,8 @@ import Home from "../Pages/Home";
 import MainLayout from "../Layout/MainLayout";
 import Dashboard from "../Pages/Dashboard";
 import Statistics from "../Pages/Statistics";
-import ProductsList from "../Pages/ProductsList"; // New Component
-import ProductDetail from "../Pages/ProductDetail"; // New Component
+import ProductsList from "../Pages/ProductsList";
+import ProductDetail from "../Pages/ProductDetail";
 
 const Routes = createBrowserRouter([
   {
@@ -29,12 +29,13 @@ const Routes = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`../products.json`)
             .then((res) => res.json())
-            .then((products) => 
-              products.find(product => product.product_id === Number(params.productId))
+            .then((products) =>
+              products.find(
+                (product) => product.product_id === Number(params.productId)
+              )
             ),
       },
-      
-      
+
       {
         path: "dashboard",
         element: <Dashboard />,
