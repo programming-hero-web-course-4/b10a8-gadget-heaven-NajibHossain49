@@ -1,9 +1,9 @@
-import BannerImage from '../assets/banner.jpg';
+import BannerImage from "../assets/banner.jpg";
 
 const Banner = () => {
   return (
     <>
-      <div className="flex flex-col items-center justify-center border bg-[#9538E2] container mx-auto rounded-3xl p-20 relative pb-72 mb-96">
+      <div className="flex flex-col items-center justify-center border bg-[#9538E2] container mx-auto rounded-3xl p-20 relative pb-56 mb-64">
         <div className="text-center">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-5xl font-bold text-white mb-4">
@@ -20,11 +20,11 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-[-370px] p-6 border rounded-2xl w-3/5 backdrop-blur-md">
-          <img 
-            src={BannerImage} 
-            alt="VR Headset" 
-            className="w-full h-auto rounded-2xl" 
+        <div className="absolute bottom-[-250px] p-6 border rounded-2xl w-3/5 backdrop-blur-md">
+          <img
+            src={BannerImage}
+            alt="VR Headset"
+            className="w-full h-96 rounded-2xl"
           />
         </div>
       </div>

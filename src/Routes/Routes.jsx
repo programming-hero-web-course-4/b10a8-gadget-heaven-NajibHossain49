@@ -5,6 +5,7 @@ import Dashboard from "../Pages/Dashboard";
 import Statistics from "../Pages/Statistics";
 import ProductsList from "../Pages/ProductsList";
 import ProductDetail from "../Pages/ProductDetail";
+import ErrorPage from "../Pages/ErrorPage";
 
 const Routes = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const Routes = createBrowserRouter([
         path: "products/:productId",
         element: <ProductDetail />,
         loader: ({ params }) =>
-          fetch(`../products.json`)
+          fetch("../products.json")
             .then((res) => res.json())
             .then((products) =>
               products.find(
@@ -35,16 +36,19 @@ const Routes = createBrowserRouter([
               )
             ),
       },
-
       {
         path: "dashboard",
         element: <Dashboard />,
       },
       {
-        path: "statistics",
+        path: "nothing",
         element: <Statistics />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 

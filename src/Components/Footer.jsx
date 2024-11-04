@@ -1,31 +1,56 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <>
-      <div className="text-center container mx-auto">
-        <h1 className="text-4xl pb-5">Gadget Heaven</h1>
-        <p className="pb-3">Leading the way in cutting-edge technology and innovation.</p>
-        <hr />
+      <div className="text-center container mx-auto pb-8">
+        <h1 className="text-4xl font-bold pb-5">Gadget Heaven</h1>
+        <p className="pb-5">
+          Leading the way in cutting-edge technology and innovation.
+        </p>
       </div>
-      <footer className="flex justify-around container mx-auto">
-        <div className="flex flex-col gap-3 py-6">
-          <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
-          <a className="link link-hover">Design</a>
-          <a className="link link-hover">Marketing</a>
-          <a className="link link-hover">Advertisement</a>
+      <hr />
+      <footer className="flex justify-around container mx-auto mb-8">
+        <div className="text-center flex flex-col gap-3 py-6">
+          <h6 className="footer-title font-bold">Services</h6>
+          <Link className="link link-hover" to="#">
+            Product Support
+          </Link>
+          <Link className="link link-hover" to="#">
+            Order Tracking
+          </Link>
+          <Link className="link link-hover" to="#">
+            Shipping & Delivery
+          </Link>
+          <Link className="link link-hover" to="#">
+            Returns
+          </Link>
         </div>
-        <div className="flex flex-col gap-3">
-          <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+
+        <div className="text-center flex flex-col gap-3 py-6">
+          <h6 className="footer-title font-bold">Company</h6>
+          <Link className="link link-hover" to="#">
+            About Us
+          </Link>
+          <Link className="link link-hover" to="#">
+            Careers
+          </Link>
+          <Link className="link link-hover" to="#">
+            Contact
+          </Link>
         </div>
-        <div className="flex flex-col gap-3">
-          <h6 className="footer-title">Legal</h6>
-          <a className="link link-hover">Terms of use</a>
-          <a className="link link-hover">Privacy policy</a>
-          <a className="link link-hover">Cookie policy</a>
+
+        <div className="text-center flex flex-col gap-3 py-6">
+          <h6 className="footer-title font-bold">Legal</h6>
+          <Link className="link link-hover" to="#">
+            Terms of Use
+          </Link>
+          <Link className="link link-hover" to="#">
+            Privacy Policy
+          </Link>
+          <Link className="link link-hover" to="#">
+            Cookie Policy
+          </Link>
         </div>
       </footer>
     </>

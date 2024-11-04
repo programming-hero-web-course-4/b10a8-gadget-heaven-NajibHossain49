@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getCart } from "../cartUtils/cartUtils";
 import { FaTrash } from "react-icons/fa";
-import Modal from "react-modal"; // Ensure you have this installed
+import Modal from "react-modal"; 
 
 const Cart = () => {  
   const [cartItems, setCartItems] = useState([]);
