@@ -17,7 +17,7 @@ const Home = () => {
         subtitle="Choose your desired coffee category to browse through specific coffees that fit in your taste."
       />
       {/* Categories List */}
-      <CategoriesList categories={products} /> {/* Pass products data */}
+      {/* <CategoriesList categories={products} /> */}
       {/* Dynamic Nested Component */}
       <Outlet />
     </div>

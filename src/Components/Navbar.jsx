@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { FaHeart, FaCreditCard } from "react-icons/fa";
 const Navbar = () => {
   return (
     <div className="navbar bg-base-100 container mx-auto">
@@ -48,8 +49,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
-        <button className="btn">btn</button>
+        <NavLink to="/card" className="btn" aria-label="Card">
+          <FaCreditCard />
+        </NavLink>
+        <NavLink to="/favorites" className="btn" aria-label="Favorites">
+          <FaHeart />
+        </NavLink>
       </div>
     </div>
   );

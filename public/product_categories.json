@@ -47,28 +47,14 @@
         "product_id": 12,
         "category": "Laptops"
     },
+   
     {
         "product_id": 13,
-        "category": "Cameras"
+        "category": "Gaming"
     },
     {
         "product_id": 14,
-        "category": "Cameras"
-    },
-    {
-        "product_id": 15,
         "category": "Gaming"
-    },
-    {
-        "product_id": 16,
-        "category": "Gaming"
-    },
-    {
-        "product_id": 17,
-        "category": "Smart Home"
-    },
-    {
-        "product_id": 18,
-        "category": "Smart Home"
     }
+    
 ]
