@@ -24,7 +24,8 @@ const ProductDetail = () => {
   const handleAddToCart = () => {
     const result = addToCart(product); // Call the addToCart function
     if (result.success) {
-      toast.success(result.message); // Show success toast
+      // toast.success(result.message); // Show success toast
+      alert(result.message); // Show success toast
     } else {
       // toast.info(result.message); // Show info if already in cart
       alert(result.message)
