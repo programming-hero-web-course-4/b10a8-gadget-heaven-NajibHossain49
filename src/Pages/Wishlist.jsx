@@ -29,23 +29,23 @@ const Wishlist = () => {
 
   return (
     <div>
-      <h2 className="font-bold text-lg">Your Wishlist</h2>
+      <h2 className="font-bold text-lg">Wishlist</h2>
       {wishlistItems.length === 0 ? (
         <p>Your wishlist is empty!</p>
       ) : (
         <ul>
           {wishlistItems.map((item) => (
-            <li key={item.product_id} className="flex justify-between items-center mb-4 p-4 border-b">
+            <li key={item.product_id} className="flex justify-between items-center mb-4 p-4 shadow-md">
               <div className="flex items-center">
                 <img src={item.product_image} alt={item.product_title} className="w-16 h-16 rounded-lg mr-4" />
                 <div className="flex flex-col">
                   <h3 className="font-semibold">{item.product_title}</h3>
-                  <p className="text-lg">Description: ${item.description}</p>
-                  <p className="text-lg">Price: ${item.price}</p>
+                  <p className="text-lg">Description: {item.description}</p>
+                  <p className="text-lg">Price: $ {item.price}</p>
                   <div className="mt-2"> {/* Margin for spacing */}
                     <button 
                       onClick={() => handleAddToCart(item)} 
-                      className="bg-purple-500 text-white rounded-full px-4 py-2 hover:bg-gray-200"
+                      className="bg-purple-500 text-white rounded-full px-4 py-2 hover:bg-purple-600"
                     >
                       Add to Cart
                     </button>

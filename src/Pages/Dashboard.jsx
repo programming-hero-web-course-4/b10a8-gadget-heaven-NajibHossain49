@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   return (
     <div className="relative">
-      <div className="text-center bg-[#9538E2] p-10 pb-16">
+      <div className="text-center bg-[#9538E2] p-10 mb-16">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl font-bold text-white mb-4">Dashboard</h1>
           <p className="text-lg text-white mb-6">
