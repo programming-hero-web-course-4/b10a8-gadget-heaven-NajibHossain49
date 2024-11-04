@@ -2,6 +2,7 @@ import { Outlet, useLoaderData } from "react-router-dom";
 import Banner from "../Components/Banner";
 import Heading from "../Components/Heading";
 import CategoriesList from "../Components/CategoriesList ";
+import { ToastContainer } from "react-toastify";
 
 const Home = () => {
   // Retrieve data from the loader
@@ -9,6 +10,8 @@ const Home = () => {
 
   return (
     <div>
+
+<ToastContainer />
       {/* Banner */}
       <Banner />
       {/* Heading */}
