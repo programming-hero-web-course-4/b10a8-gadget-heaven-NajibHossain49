@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
-import { toast } from "react-toastify"; 
+import { toast } from 'react-toastify'; 
 import { addToCart } from "../cartUtils/cartUtils";
 import { addToWishlist } from "../wishlistUtils/wishlistUtils";
  
@@ -22,25 +22,22 @@ const ProductDetail = () => {
   const roundedRating = Math.round(rating * 2) / 2;
 
   const handleAddToCart = () => {
-    const result = addToCart(product); // Call the addToCart function
+    const result = addToCart(product);
     if (result.success) {
-      // toast.success(result.message); // Show success toast
-      alert(result.message); // Show success toast
+      toast.success("Added to cart successfully!");
     } else {
-      // toast.info(result.message); // Show info if already in cart
-      alert(result.message)
+      toast.info("This item is already in your cart.");
     }
   };
 
   const handleFavorite = () => {
-    const result = addToWishlist(product); // Call the addToWishlist function
+    const result = addToWishlist(product);
     if (result.success) {
-      // toast.success(result.message); // Show success toast
-     alert(result.message); // Show success toast
+      toast.success("Added to wishlist successfully!");
     } else {
-      alert(result.message); // Alert if already in wishlist
+      toast.info("This item is already in your wishlist.");
     }
-  };
+  }
 
   return (
     <>

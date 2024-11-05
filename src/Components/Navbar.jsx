@@ -28,16 +28,60 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `nav-link ${
+                  isActive
+                    ? "underline text-purple-600"
+                    : "hover:text-purple-600"
+                } transition-all duration-200`
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/statistics">Statistics</NavLink>
+            <NavLink
+              to="/statistics"
+              className={({ isActive }) =>
+                `nav-link ${
+                  isActive
+                    ? "underline text-purple-600"
+                    : "hover:text-purple-600"
+                } transition-all duration-200`
+              }
+            >
+              Statistics
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard">Dashboard</NavLink>
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) =>
+                `nav-link ${
+                  isActive
+                    ? "underline text-purple-600"
+                    : "hover:text-purple-600"
+                } transition-all duration-200`
+              }
+            >
+              Dashboard
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/faqs">FAQ</NavLink>
+            <NavLink
+              to="/faqs"
+              className={({ isActive }) =>
+                `nav-link ${
+                  isActive
+                    ? "underline text-purple-600"
+                    : "hover:text-purple-600"
+                } transition-all duration-200`
+              }
+            >
+              FAQ
+            </NavLink>
           </li>
         </ul>
       </div>

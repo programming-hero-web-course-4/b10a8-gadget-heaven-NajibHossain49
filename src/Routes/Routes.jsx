@@ -16,7 +16,7 @@ const Routes = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("../product_categories.json"),
+        loader: () => fetch("../product_categories.json"), // Fetch categories data
         children: [
           {
             path: "/",
@@ -29,7 +29,7 @@ const Routes = createBrowserRouter([
         path: "products/:productId",
         element: <ProductDetail />,
         loader: ({ params }) =>
-          fetch("../products.json")
+          fetch("../products.json") // Fetch products data
             .then((res) => res.json())
             .then((products) =>
               products.find(
@@ -46,11 +46,10 @@ const Routes = createBrowserRouter([
         element: <Statistics />,
       },
       {
-        path: "faqs",  
+        path: "faqs",
         element: <HelpPage />,
-        loader: () => fetch("../../public/FAQ.json").then(res => res.json()), // Fetch FAQ data
-      }
-      
+        loader: () => fetch("../../public/FAQ.json").then((res) => res.json()), // Fetch FAQ data
+      },
     ],
   },
   {

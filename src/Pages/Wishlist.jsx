@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getWishlist } from '../wishlistUtils/wishlistUtils'; 
 import { addToCart } from '../cartUtils/cartUtils'; 
-import { FaTrash } from 'react-icons/fa'; 
+import { FaTrash } from 'react-icons/fa';
+import { toast } from 'react-toastify'; 
 
 const Wishlist = () => {
   const [wishlistItems, setWishlistItems] = useState([]);
@@ -20,10 +21,10 @@ const Wishlist = () => {
   const handleAddToCart = (item) => {
     const result = addToCart(item);
     if (result.success) {
-      alert(result.message); 
+      toast.success("Added to cart successfully!"); 
       handleRemoveItem(item.product_id); 
     } else {
-      alert(result.message); 
+      toast.info("This item is already in your cart."); 
     }
   };
 
