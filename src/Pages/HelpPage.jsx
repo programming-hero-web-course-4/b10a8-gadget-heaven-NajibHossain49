@@ -40,12 +40,15 @@ const HelpPage = () => {
       <Helmet>
         <title>Help - Find Assistance and FAQs</title>
       </Helmet>
-      <h1 className="text-3xl font-bold text-center mb-8">Help Center</h1>
+      <div className="text-center bg-[#9538E2] p-10 mb-16">
+        <h1 className="text-3xl text-white font-bold text-center mb-8">Need assistance?</h1>
+        <p className="text-base text-white">Browse our help articles or contact support for more.</p>
+      </div>
 
       {/* FAQ Section */}
       {faqs.length > 0 ? (
         <section className="faq-section mb-8">
-          <h2 className="text-2xl font-semibold mb-4">
+          <h2 className="text-2xl font-semibold mb-4 text-center">
             Frequently Asked Questions
           </h2>
           <div className="faq-list space-y-4">

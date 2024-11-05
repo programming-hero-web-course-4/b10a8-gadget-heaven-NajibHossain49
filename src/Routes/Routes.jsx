@@ -48,7 +48,8 @@ const Routes = createBrowserRouter([
       {
         path: "faqs",
         element: <HelpPage />,
-        loader: () => fetch("../../public/FAQ.json").then((res) => res.json()), // Fetch FAQ data
+        loader: () => fetch("/FAQ.json").then((res) => res.json()),
+        // Fetch FAQ data
       },
     ],
   },
