@@ -3,6 +3,7 @@ import Banner from "../Components/Banner";
 import Heading from "../Components/Heading";
 import CategoriesList from "../Components/CategoriesList ";
 import { ToastContainer } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   // Retrieve data from the loader
@@ -10,8 +11,12 @@ const Home = () => {
 
   return (
     <div>
+      {/* Dynamic Title */}
+      <Helmet>
+        <title>Home - Explore Cutting-Edge Gadgets</title>
+      </Helmet>
 
-<ToastContainer />
+      <ToastContainer />
       {/* Banner */}
       <Banner />
       {/* Heading */}

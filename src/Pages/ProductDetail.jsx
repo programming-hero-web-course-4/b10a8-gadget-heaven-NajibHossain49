@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import { FaRegHeart } from "react-icons/fa";
-import { toast } from 'react-toastify'; 
+import { toast } from "react-toastify";
 import { addToCart } from "../cartUtils/cartUtils";
 import { addToWishlist } from "../wishlistUtils/wishlistUtils";
- 
+import { Helmet } from "react-helmet-async";
 
 const ProductDetail = () => {
   const product = useLoaderData();
@@ -37,31 +37,45 @@ const ProductDetail = () => {
     } else {
       toast.info("This item is already in your wishlist.");
     }
-  }
+  };
 
   return (
     <>
+      <Helmet>
+        <title>{`${product_title} `}</title>
+      </Helmet>
       <div className="relative">
         <div className="text-center bg-[#9538E2] p-10 pb-80">
           <div className="max-w-3xl mx-auto">
-            <h1 className="text-3xl font-bold text-white mb-4">Product Details</h1>
+            <h1 className="text-3xl font-bold text-white mb-4">
+              Product Details
+            </h1>
             <p className="text-lg text-white mb-6">
-              Explore the latest gadgets that will take your experience to the next level.
+              Explore the latest gadgets that will take your experience to the
+              next level.
             </p>
           </div>
         </div>
         <div className="flex max-w-4xl mx-auto bg-white p-10 gap-12 rounded-lg shadow-lg -mt-72 mb-32">
           <div className="max-w-[350px] rounded-lg p-4">
-            <img src={product_image} alt="Gadget" className="w-full rounded-lg" />
+            <img
+              src={product_image}
+              alt="Gadget"
+              className="w-full rounded-lg"
+            />
           </div>
           <div className="flex flex-col gap-5">
             <div>
               <h1 className="text-3xl font-semibold">{product_title}</h1>
-              <p className="text-xl font-semibold text-gray-700 mt-2">Price: ${price}</p>
+              <p className="text-xl font-semibold text-gray-700 mt-2">
+                Price: ${price}
+              </p>
             </div>
             <div
               className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${
-                availability ? "bg-yellow-100 text-yellow-800 border-yellow-400" : "bg-yellow-200 text-yellow-900 border-yellow-500"
+                availability
+                  ? "bg-yellow-100 text-yellow-800 border-yellow-400"
+                  : "bg-yellow-200 text-yellow-900 border-yellow-500"
               }`}
               style={{ width: "100px", textAlign: "center" }}
             >
@@ -70,7 +84,9 @@ const ProductDetail = () => {
 
             <p className="text-gray-600">{description}</p>
             <div>
-              <h2 className="font-semibold text-lg text-gray-800">Specification:</h2>
+              <h2 className="font-semibold text-lg text-gray-800">
+                Specification:
+              </h2>
               <ul className="list-decimal list-inside text-gray-700 ml-4">
                 {Specification?.map((specs, index) => (
                   <li key={index}>{specs}</li>
@@ -81,7 +97,11 @@ const ProductDetail = () => {
               <h2 className="font-semibold text-lg text-gray-800">Rating:</h2>
               <div className="flex items-center">
                 <div className="rating rating-lg rating-half mr-2">
-                  <input type="radio" name="rating-10" className="rating-hidden" />
+                  <input
+                    type="radio"
+                    name="rating-10"
+                    className="rating-hidden"
+                  />
                   {[...Array(5)].map((_, index) => (
                     <span key={index}>
                       <input
@@ -99,7 +119,9 @@ const ProductDetail = () => {
                     </span>
                   ))}
                 </div>
-                <span className="text-gray-700 text-lg font-semibold">{roundedRating} / 5</span>
+                <span className="text-gray-700 text-lg font-semibold">
+                  {roundedRating} / 5
+                </span>
               </div>
             </div>
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 const HelpPage = () => {
@@ -36,6 +37,9 @@ const HelpPage = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
+      <Helmet>
+        <title>Help - Find Assistance and FAQs</title>
+      </Helmet>
       <h1 className="text-3xl font-bold text-center mb-8">Help Center</h1>
 
       {/* FAQ Section */}

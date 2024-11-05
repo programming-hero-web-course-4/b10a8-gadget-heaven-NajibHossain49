@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Cart from "./Cart"; // Adjust the path as needed
 import Wishlist from "./Wishlist"; // Adjust the path as needed
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   // Initialize state to show Cart by default
@@ -12,6 +13,9 @@ const Dashboard = () => {
 
   return (
     <div className="relative">
+      <Helmet>
+        <title>Dashboard - User Overview</title>
+      </Helmet>
       <div className="text-center bg-[#9538E2] p-10 mb-16">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl font-bold text-white mb-4">Dashboard</h1>

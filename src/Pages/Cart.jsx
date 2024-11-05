@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getCart } from "../cartUtils/cartUtils";
 import { FaTrash } from "react-icons/fa";
-import Modal from "react-modal"; 
+import Modal from "react-modal";
 
-const Cart = () => {  
+const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSortedDescending, setIsSortedDescending] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const initialCartItems = getCart();
@@ -31,15 +33,18 @@ const Cart = () => {
   );
 
   const handleSortToggle = () => {
-    setIsSortedDescending((prev) => !prev); 
+    setIsSortedDescending((prev) => !prev);
   };
 
   const handlePurchase = () => {
     setIsModalOpen(true);
+    setCartItems([]); // Clear cart
+    localStorage.setItem("cart", JSON.stringify([])); // Update localStorage
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    navigate("/"); // Redirect to the home page
   };
 
   return (
@@ -59,13 +64,13 @@ const Cart = () => {
                   <img
                     src={item.product_image}
                     alt={item.product_title}
-                    className="w-20 h-20 rounded-lg mr-4" // Adjusted image size
+                    className="w-20 h-20 rounded-lg mr-4"
                   />
                   <div>
                     <h3 className="font-semibold">{item.product_title}</h3>
                     <p className="text-gray-600">{item.description}</p>
                     <p className="text-lg font-semibold">
-                      Price: ${item.price.toFixed(2)} {/* Ensured price is formatted */}
+                      Price: ${item.price.toFixed(2)}
                     </p>
                   </div>
                 </div>
@@ -81,8 +86,10 @@ const Cart = () => {
         )}
       </div>
       <div className="w-1/4 flex flex-col items-end">
-        <h3 className="font-semibold mb-2">Total Cost: ${totalCost.toFixed(2)}</h3>
-        <div className="flex space-x-2"> {/* Added space between buttons */}
+        <h3 className="font-semibold mb-2">
+          Total Cost: ${totalCost.toFixed(2)}
+        </h3>
+        <div className="flex space-x-2">
           <button
             onClick={handleSortToggle}
             className="px-4 py-2 border border-purple-600 text-purple-600 rounded-full hover:bg-gray-200"
@@ -91,25 +98,35 @@ const Cart = () => {
           </button>
           <button
             onClick={handlePurchase}
-            className="px-4 py-2 bg-purple-500 text-white rounded-full hover:bg-purple-600"
+            className={`px-4 py-2 text-white rounded-full hover:bg-purple-600 
+    ${
+      cartItems.length === 0 || totalCost === 0
+        ? "bg-gray-400 cursor-not-allowed"
+        : "bg-purple-500"
+    }`}
+            disabled={cartItems.length === 0 || totalCost === 0} // Disable if cart is empty
           >
             Purchase
           </button>
         </div>
       </div>
-      {/* Modal for purchase confirmation */}
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         contentLabel="Purchase Confirmation"
+        className="flex justify-center items-center fixed inset-0 bg-black bg-opacity-50"
       >
-        <h2 className="font-bold text-lg">Thank you for your purchase!</h2>
-        <button
-          onClick={closeModal}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-        >
-          Close
-        </button>
+        <div className="max-w-xs w-full mx-auto p-6 bg-white rounded-lg">
+          <h2 className="font-bold text-lg text-center">
+            Payment Successfully
+          </h2>
+          <button
+            onClick={closeModal}
+            className="mt-4 px-4 py-2 bg-purple-500 text-white rounded-full hover:bg-purple-600 w-full"
+          >
+            Close
+          </button>
+        </div>
       </Modal>
     </div>
   );
