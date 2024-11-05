@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import { addToCart } from "../cartUtils/cartUtils";
 import { addToWishlist } from "../wishlistUtils/wishlistUtils";
 import { Helmet } from "react-helmet-async";
+import { useState, useEffect } from "react";
 
 const ProductDetail = () => {
   const product = useLoaderData();
@@ -21,6 +22,17 @@ const ProductDetail = () => {
 
   const roundedRating = Math.round(rating * 2) / 2;
 
+  const [isInWishlist, setIsInWishlist] = useState(false);
+
+  useEffect(() => {
+    const checkWishlist = () => {
+      const isAlreadyInWishlist = addToWishlist(product).success === false;
+      setIsInWishlist(isAlreadyInWishlist);
+    };
+
+    checkWishlist();
+  }, [product]);
+
   const handleAddToCart = () => {
     const result = addToCart(product);
     if (result.success) {
@@ -31,8 +43,13 @@ const ProductDetail = () => {
   };
 
   const handleFavorite = () => {
+    if (isInWishlist) {
+      toast.info("This item is already in your wishlist.");
+      return;
+    }
     const result = addToWishlist(product);
     if (result.success) {
+      setIsInWishlist(true); // Update the wishlist state
       toast.success("Added to wishlist successfully!");
     } else {
       toast.info("This item is already in your wishlist.");
@@ -133,8 +150,11 @@ const ProductDetail = () => {
                 Add To Cart
               </button>
               <div
-                className="p-2 rounded-full bg-white border border-purple-600 hover:bg-purple-100 cursor-pointer"
+                className={`p-2 rounded-full bg-white border border-purple-600 hover:bg-purple-100 cursor-pointer ${
+                  isInWishlist ? "cursor-not-allowed opacity-50" : ""
+                }`}
                 onClick={handleFavorite}
+                disabled={isInWishlist}
               >
                 <FaRegHeart className="text-purple-600 text-xl" />
               </div>
