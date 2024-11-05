@@ -26,7 +26,7 @@ Here are the key features of the **Gadget Heaven** platform:
 
 ## Requirement Document
 
-[**View Requirement Document**](#) 
+[**View Requirement Document**](https://drive.google.com/file/d/1i4YBZAZnATeDvQ275IRrEi98JtWBOM-f/view?usp=sharing) 
 
 ---
 
@@ -79,8 +79,8 @@ Here are five key features of the **Gadget Heaven** platform:
 
 ## Attachments
 
-- **Alternate Live Website Link**: [https://n49h-gadget-heaven.surge.sh/]
-- **Requirement Document Link**: [Insert link to requirement document here]
+- [**Alternate Live Website Link**](https://n49h-gadget-heaven.surge.sh/) 
+- [**View Requirement Document**](https://drive.google.com/file/d/1i4YBZAZnATeDvQ275IRrEi98JtWBOM-f/view?usp=sharing) 
 
 ---
 
