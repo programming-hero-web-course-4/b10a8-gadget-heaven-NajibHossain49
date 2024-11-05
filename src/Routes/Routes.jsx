@@ -6,6 +6,7 @@ import Statistics from "../Pages/Statistics";
 import ProductsList from "../Pages/ProductsList";
 import ProductDetail from "../Pages/ProductDetail";
 import ErrorPage from "../Pages/ErrorPage";
+import HelpPage from "../Pages/HelpPage";
 
 const Routes = createBrowserRouter([
   {
@@ -44,6 +45,12 @@ const Routes = createBrowserRouter([
         path: "nothing",
         element: <Statistics />,
       },
+      {
+        path: "faqs",  
+        element: <HelpPage />,
+        loader: () => fetch("../../public/FAQ.json").then(res => res.json()), // Fetch FAQ data
+      }
+      
     ],
   },
   {

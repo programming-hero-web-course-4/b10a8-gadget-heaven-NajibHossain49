@@ -15,8 +15,6 @@ const Navbar = () => {
 
     const initialWishlistItems = getWishlist();
     setWishlistItemCount(initialWishlistItems.length);
-
-  
   }, []);
 
   return (
@@ -25,7 +23,7 @@ const Navbar = () => {
       <div className="navbar-start">
         <NavLink className="btn btn-ghost text-xl">Gadget Heaven</NavLink>
       </div>
-      
+
       {/* Navbar-Center */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -38,9 +36,12 @@ const Navbar = () => {
           <li>
             <NavLink to="/dashboard">Dashboard</NavLink>
           </li>
+          <li>
+            <NavLink to="/faqs">FAQ</NavLink>
+          </li>
         </ul>
       </div>
-      
+
       {/* Navbar-End */}
       <div className="navbar-end flex items-center space-x-4">
         <NavLink to="/cart" className="btn relative" aria-label="Cart">
@@ -51,7 +52,7 @@ const Navbar = () => {
             </span>
           )}
         </NavLink>
-        
+
         <NavLink to="#" className="btn relative" aria-label="Wishlist">
           <FaHeart />
           {wishlistItemCount > 0 && (
